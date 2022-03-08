@@ -6,7 +6,9 @@ const express = require("express"); // import express
 const morgan = require("morgan"); //import morgan
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
+//const Spots = require('./models/spots'); // importing fruits from wherever it is
 const path = require("path"); // built in node module we use to resolve paths more on this when we use it
+// const { stringify } = require("querystring");
 
 
 /////////////////////////////////////////////
@@ -33,12 +35,23 @@ mongoose.connection
 ////////////////
 
 const { Schema, model } = mongoose;
+
 /* 
 const Schema = mongoose.Schema; same as above
 const model = mongoose.model; same as above
 */
 
 
+
+// make fruits schema
+const spotsSchema = new Schema({
+  name: String,
+  url: String,
+  
+});
+
+// make fruit model
+const Spots = model("Dopespots", spotsSchema);
 
 ///////////////////////
 // app object setup////
@@ -60,13 +73,45 @@ app.use(express.static("public"));
 // Routes
 ////////////////////////////////////////////
 app.get("/", (req, res) => {
-    res.send("your server is running... better catch it.");
+    res.send("your server is running");
   });
 
+  app.get("/spots/seed", (req, res) => {
+    // array of starter fruits
+    const startSpots = [
+      { name: "Catch", url: "",  },
+      { name: "Barking Dog", url: "",  },
+      { name: "Kefi", url: "",  },
+      { name: "Flex Mussels", url: "",  },
+      { name: "Pepe Rosso To Go", url: "", },
+    ];
+  
+    // Delete all 
+    Spots.deleteMany({}).then((data) => {
+      // Seed Starter spotss
+      Spots.create(startSpots).then((data) => {
+        // send created fruits as response to confirm creation
+        res.json(data);
+      })
+    }).catch((err)=>{
+      res.status(400).send(err)
+    })
+  })
+
   //Index
-
+  app.get('/spots', (req, res) => {
+    Spots.find({})
+    .then((spots) => {
+      res.render("spots/Index",{ spots })
+  })
+  .catch((error) => {
+      res.status(400).json({ error })
+  })
+});
   //New
-
+  // app.get('/dopespots/new', (req, res) => {
+  //   res.render('dopespots/New')
+// })
   //Delete
 
   //UPDATE
