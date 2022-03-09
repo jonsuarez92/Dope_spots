@@ -114,8 +114,41 @@ app.get("/", (req, res) => {
 })
   //Delete
 
+  app.delete("/spots/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id;
+    // delete the resturant
+    Spots.findByIdAndRemove(id)
+      .then((spot) => {
+        // redirect to main page after deleting
+        res.redirect("/spots");
+      })
+      // send error as json
+      .catch((error) => {
+        console.log(error);
+        res.json({ error });
+      });
+  });
+
   //UPDATE
   
+  app.put("/spots/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id;
+    // check if the readyToEat property should be true or false
+    
+    // update the resturants
+    Spots.findByIdAndUpdate(id, req.body, { new: true })
+      .then((spot) => {
+        // redirect to main page after updating
+        res.redirect("/spots");
+      })
+      // send error as json
+      .catch((error) => {
+        console.log(error);
+        res.json({ error });
+      });
+  });
   
   //Create
 
