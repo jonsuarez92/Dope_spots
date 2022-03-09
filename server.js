@@ -109,9 +109,9 @@ app.get("/", (req, res) => {
   })
 });
   //New
-  // app.get('/dopespots/new', (req, res) => {
-  //   res.render('dopespots/New')
-// })
+  app.get('/spots/new', (req, res) => {
+    res.render('spots/New')
+})
   //Delete
 
   //UPDATE
@@ -121,6 +121,22 @@ app.get("/", (req, res) => {
   //EDIT
 
   //SHOW 
+
+  app.get("/spots/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id;
+  
+    // find the particular spot from the database
+    Spots.findById(id)
+      .then((spot) => {
+        // render the template with the data from the database
+        res.render("spots/Show", { spot});
+      })
+      .catch((error) => {
+        console.log(error);
+        res.json({ error });
+      });
+  });
 
 const PORT = process.env.PORT;  
 app.listen(PORT, () => 

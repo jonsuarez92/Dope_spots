@@ -19,7 +19,7 @@ class Index extends React.Component{
                      ))
                       }
                  </div>
-             
+                 <a href="/spots/New"><button>Put Your Favorite Resturant</button></a>
             </DefaultLayout>
         )
     }
