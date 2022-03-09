@@ -116,9 +116,43 @@ app.get("/", (req, res) => {
 
   //UPDATE
   
+  
   //Create
 
+app.post("/spots", (req, res) => {
+  // check if the readyToEat property should be true or false
+  // req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+  // create the New fruit
+  Spots.create(req.body)
+    .then((spots) => {
+      // redirect user to Index page if successfully created item
+      res.redirect("/spots");
+    })
+    // send error as json
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+});
+
+
+
   //EDIT
+  app.get("/spots/:id/edit", (req, res) => {
+    // get the id from params
+    const id = req.params.id;
+    // get the resturant from the database
+    Spots.findById(id)
+      .then((spot) => {
+        // render Edit page and send resturant data
+        res.render("spots/Edit.jsx", { spot });
+      })
+      // send error as json
+      .catch((error) => {
+        console.log(error);
+        res.json({ error });
+      });
+  });
 
   //SHOW 
 
