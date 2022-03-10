@@ -12,7 +12,7 @@ class Index extends React.Component{
                      <article>
                      <a href={`/spots/${spot._id }`}>
                       <h2>
-                         {spot.name}  
+                         {spot.name} 
                      </h2>
                     </a>
                    </article>

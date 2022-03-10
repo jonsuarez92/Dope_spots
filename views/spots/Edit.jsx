@@ -19,8 +19,8 @@ class Edit extends React.Component{
                 </label>
                 <label>
                   URL:<input
-                    type="text"
-                    name="url"
+                    type="url"
+                    name="uResturant"
                     placeholder="enter resturant name"
                     value={spot.url}
                   />

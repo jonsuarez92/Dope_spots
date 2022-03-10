@@ -12,10 +12,11 @@ class DefaultLayout extends React.Component {
                     <meta httpEquiv='X-UA-Compatible' content='IE=edge'/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
                     <title>My  Website to find dope spots</title>
+                    <link rel="stylesheet" href="/css/app.css"></link>
         </head>
         <body>
       <header>
-     <h1>The dope spots App</h1>
+     <h1> Dope Spots  </h1>
      </header>
      <main>
       {this.props.children}

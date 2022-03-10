@@ -11,7 +11,7 @@ class Show extends React.Component{
           <h2>
             {spot.name} 
           </h2>
-          <h3>{spot.color}</h3>
+          <h3>{spot.uResturant}</h3>
           <a href={`/spots/${ spot._id }/Edit`}><button>Edit</button></a>
           <form action={`/spots/${ spot._id }?_method=DELETE`} method="POST">
             <input type="submit" value="Delete" />
