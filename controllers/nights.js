@@ -1,26 +1,23 @@
 const express = require("express");
-const Spots = require("../models/spot");
+const Nights = require("../models/night");
 
 //Create Router
 
 const router = express.Router();
 
-router.get('/seed', (req, res) => {
+
+  router.get("/seed", (req, res) => {
     // array of starter resturants
-    const startSpots = [
-      { name: "Catch", url: "https://www.catchrestaurants.com/",  },
-      { name: "Barking Dog", url: "",  },
-      { name: "Kefi", url: "",  },
-      { name: "Flex Mussels", url: "",  },
-      { name: "Pepe Rosso To Go", url: "", },
-      { name: "Nobu", url: "https://www.noburestaurants.com/fifty-seven/home/"}
-    ];
+    const startNight = [
+      { name: "Jakes Dilemma", url: "https://www.jakesdilemmanyc.com/",  },
+      { name: "Sarah East", url: "https://www.instagram.com/saharaeastnyc/?hl=en",  },
+     ];
   
     // Delete all 
-    Spots.deleteMany({}).then((data) => {
-      // Seed Starter spotss
-      Spots.create(startSpots).then((data) => {
-        // send created spots as response to confirm creation
+    Nights.deleteMany({}).then((data) => {
+      // Seed Starter Nights
+      Nights.create(startNight).then((data) => {
+        // send created nightlife as response to confirm creation
         res.json(data);
       })
     }).catch((err)=>{
@@ -30,17 +27,18 @@ router.get('/seed', (req, res) => {
 
   //Index
   router.get('/', (req, res) => {
-    Spots.find({})
-    .then((spots) => {
-      res.render("spots/Index",{ spots })
+    Nights.find({})
+    .then((night) => {
+      res.render("nights/Index",{ night })
   })
   .catch((error) => {
       res.status(400).json({ error })
   })
 });
+
   //New
   router.get('/new', (req, res) => {
-    res.render('spots/New')
+    res.render('nights/New')
 })
   //Delete
 
@@ -48,10 +46,10 @@ router.get('/seed', (req, res) => {
     // get the id from params
     const id = req.params.id;
     // delete the resturant
-    Spots.findByIdAndRemove(id)
-      .then((spot) => {
+    Nights.findByIdAndRemove(id)
+      .then((night) => {
         // redirect to main page after deleting
-        res.redirect("/spots");
+        res.redirect("/nights");
       })
       // send error as json
       .catch((error) => {
@@ -65,13 +63,13 @@ router.get('/seed', (req, res) => {
   router.put("/:id", (req, res) => {
     // get the id from params
     const id = req.params.id;
-    
+    // check if the readyToEat property should be true or false
     
     // update the resturants
-    Spots.findByIdAndUpdate(id, req.body, { new: true })
-      .then((spot) => {
+    Nights.findByIdAndUpdate(id, req.body, { new: true })
+      .then((night) => {
         // redirect to main page after updating
-        res.redirect("/spots");
+        res.redirect("/nights");
       })
       // send error as json
       .catch((error) => {
@@ -83,12 +81,12 @@ router.get('/seed', (req, res) => {
   //Create
 
 router.post("/", (req, res) => {
-  
-  // create the New spots
-  Spots.create(req.body)
-    .then((spots) => {
+ 
+  // create the New fruit
+  Nights.create(req.body)
+    .then((night) => {
       // redirect user to Index page if successfully created item
-      res.redirect("/spots");
+      res.redirect("/nights");
     })
     // send error as json
     .catch((error) => {
@@ -104,10 +102,10 @@ router.post("/", (req, res) => {
     // get the id from params
     const id = req.params.id;
     // get the resturant from the database
-    Spots.findById(id)
-      .then((spot) => {
+    Nights.findById(id)
+      .then((night) => {
         // render Edit page and send resturant data
-        res.render("spots/Edit.jsx", { spot });
+        res.render("nights/Edit.jsx", { night });
       })
       // send error as json
       .catch((error) => {
@@ -116,24 +114,23 @@ router.post("/", (req, res) => {
       });
   });
 
-  //SHOW 
+//   //SHOW 
 
   router.get("/:id", (req, res) => {
     // get the id from params
     const id = req.params.id;
   
     // find the particular spot from the database
-    Spots.findById(id)
-      .then((spot) => {
+    Nights.findById(id)
+      .then((night) => {
         // render the template with the data from the database
-        res.render("spots/Show", { spot});
+        res.render("nights/Show", { night});
       })
       .catch((error) => {
         console.log(error);
         res.json({ error });
       });
   });
-
 
 
 module.exports = router;
