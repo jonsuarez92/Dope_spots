@@ -6,10 +6,10 @@ class Index extends React.Component{
         const {spots} = this.props;
         return(
             <DefaultLayout>
-                <div>
+                <div >
                     {
                      spots.map((spot) => (
-                     <article>
+                     <article class="two">
                      <a href={`/spots/${spot._id }`}>
                       <h2>
                          {spot.name} 
@@ -19,7 +19,8 @@ class Index extends React.Component{
                      ))
                       }
                  </div>
-                 <a href="/spots/New"><button>Put Your Favorite Resturant</button></a>
+                 <a href="/spots/New"><button>Enter Your Favorite Resturant</button></a>
+                 <a href="/nights/New"><button>Enter Your Favorite nightlife spot</button></a>
             </DefaultLayout>
         )
     }

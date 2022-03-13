@@ -20,9 +20,17 @@ class Edit extends React.Component{
                 <label>
                   URL:<input
                     type="url"
-                    name="uBar"
+                    name="url"
                     placeholder="enter bar name"
                     value={night.url}
+                  />
+                </label>
+                <label>
+                  Image:<input
+                    type="file"
+                    name="file"
+                    placeholder="sumbit image"
+                    value={night.image}
                   />
                 </label>
                 

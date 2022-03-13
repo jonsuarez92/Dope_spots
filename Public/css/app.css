@@ -4,6 +4,7 @@ body {
   background: url(https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjB3YWxsfGVufDB8fDB8fA%3D%3D&w=1000&q=80.jpg);
   margin: 0;
   font-family: 'Comfortaa', cursive;
+  
 }
 
 h1 {
@@ -20,7 +21,7 @@ h2 {
   text-decoration: none;
   text-shadow: 1px 1px 1px black;
   font-size: 1.5em;
-  background: rgba(193, 235, 187, .9);
+  
 }
 
 h2:hover {
@@ -32,7 +33,14 @@ a {
   text-decoration: none;
   text-shadow: 1px 1px 1px black;
   font-size: 1.5em;
-  background: rgba(193, 235, 187, .9);
+ 
+}
+article{
+  
+  color: royalblue;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
 }
 
 a:hover {
@@ -70,4 +78,39 @@ legend {
 label{
   color: rgb(83, 223, 162);
   font-size: 1em;
+}
+
+button:hover {
+  color:gold
+
+}
+
+.indexPic{
+  height: 50px;
+  width: 50px;
+}
+
+.entryWrapper{
+  display: flex !important;
+  border: 1px solid yellow;
+}
+
+.showPic{
+  width: 150px;
+  height: 150px;
+  display: flex;
+
+}
+
+.outterWrapper{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.indexPicWrapper{
+  height: 100%;
+}
+.card-text{
+  font-size: 15px !important;
 }

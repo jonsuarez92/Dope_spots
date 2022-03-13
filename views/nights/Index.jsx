@@ -6,20 +6,31 @@ class Index extends React.Component{
         const {night} = this.props;
         return(
             <DefaultLayout>
-                <div>
+                <div class="outterWrapper">
+                    
                     {
                      night.map((night) => (
-                     <article>
+                         
+                     <article class="entryWrapper">
                      <a href={`/nights/${night._id }`}>
-                      <h2>
-                         {night.name} 
-                     </h2>
-                    </a>
+                      <div class="card" style={{width:18+"rem"}}>
+  <img class="card-img-top" src={`${night.img}`}  alt="Card image cap"/>
+  <div class="card-body">
+    <h5 class="card-title">{night.name}</h5>
+    <p class="card-text"> {night.details}</p>
+    <a href="#" class="btn btn-primary">Check This Out</a>
+  </div> 
+</div>
+</a>
+                         
+                      
+                    
                    </article>
                      ))
                       }
                  </div>
-                 <a href="/nights/New"><button>Put Your Favorite nightlife spot</button></a>
+                 <a href="/nights/New"><button>Enter Your Favorite nightlife spot</button></a>
+                 <a href="/spots/New"><button>Enter Your Favorite Resturant</button></a>
             </DefaultLayout>
         )
     }

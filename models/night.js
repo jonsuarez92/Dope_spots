@@ -12,7 +12,8 @@ const { Schema, model } = mongoose;
 const nightsSchema = new Schema({
   name: String,
   url: String,
-  
+  img: String,
+  details: String,
 });
 
 // make  model

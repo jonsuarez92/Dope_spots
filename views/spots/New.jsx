@@ -13,8 +13,11 @@ class New extends React.Component{
         NAME:<input type="text" name="name" placeholder="enter Resturant name" />
       </label>
       <label>
-        Url:<input type="url" name="uResturant" placeholder="enter the url here" />
-      </label>     
+        Url:<input type="url" name="url" placeholder="enter the url here" />
+      </label>    
+      <label>
+            Images: <input type="file" name="file" placeholder="sumbit image here"/>
+      </label>    
     </fieldset>
     <input type="submit" value=" New Resturant" />
   </form>

@@ -25,6 +25,14 @@ class Edit extends React.Component{
                     value={spot.url}
                   />
                 </label>
+                <label>
+                  Image:<input
+                    type="file"
+                    name="file"
+                    placeholder="sumbit image"
+                    value={spot.image}
+                  />
+                </label>
                 
               </fieldset>
               <input type="submit" value={`Edit ${spot.name}`} />

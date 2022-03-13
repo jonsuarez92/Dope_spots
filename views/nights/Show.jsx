@@ -10,8 +10,11 @@ class Show extends React.Component{
         <article>
           <h2>
             {night.name} 
+            {console.log("!!!", night.img)}
           </h2>
-          <h3>{night.uBar}</h3>
+          <a href={night.url}>Check Bar Out</a>
+          <img class="showPic"src={`${night.img}`} alt="" />
+          
           <a href={`/nights/${ night._id }/Edit`}><button>Edit</button></a>
           <form action={`/nights/${ night._id }?_method=DELETE`} method="POST">
             <input type="submit" value="Delete" />
