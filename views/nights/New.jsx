@@ -24,6 +24,8 @@ class New extends React.Component{
     </fieldset>
     <input type="submit" value=" New Bar" />
   </form>
+          <a href="/nights/"><button>Back to Bars</button></a>
+          <a href="/spots/"><button>Back to Resturants</button></a>
 </DefaultLayout>
         )
     }

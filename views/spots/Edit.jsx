@@ -37,6 +37,8 @@ class Edit extends React.Component{
               </fieldset>
               <input type="submit" value={`Edit ${spot.name}`} />
             </form>
+            <a href="/nights/"><button>Back to Bars</button></a>
+          <a href="/spots/"><button>Back to Resturants</button></a>
           </DefaultLayout>
         )
     }

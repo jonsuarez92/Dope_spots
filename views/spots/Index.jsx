@@ -6,16 +6,23 @@ class Index extends React.Component{
         const {spots} = this.props;
         return(
             <DefaultLayout>
-                <div >
+                 <div class="outterWrapper">
+                    
                     {
-                     spots.map((spot) => (
-                     <article class="two">
-                     <a href={`/spots/${spot._id }`}>
-                      <h2>
-                         {spot.name} 
-                     </h2>
+                     spots.map((spots) => (
+                         
+                     <article class="entryWrapper">
+                     <a href={`/spots/${spots._id }`}>
+                      <div class="card" style={{width:18+"rem"}}>
+                    <img class="card-img-top" src={`${spots.img}`}  alt="Card image cap"/>
+                    <div class="card-body">
+                        <h5 class="card-title">{spots.name}</h5>
+                        <p class="card-text"> {spots.details}</p>
+                        <a href="#" class="btn btn-primary">Check This Out</a>
+                    </div> 
+                    </div>
                     </a>
-                   </article>
+                    </article>
                      ))
                       }
                  </div>

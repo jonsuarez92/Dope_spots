@@ -12,6 +12,8 @@ const { Schema, model } = mongoose;
 const spotsSchema = new Schema({
   name: String,
   url: String,
+  img: String,
+  details: String,
   
 });
 

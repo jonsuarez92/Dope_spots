@@ -15,12 +15,17 @@ class New extends React.Component{
       <label>
         Url:<input type="url" name="url" placeholder="enter the url here" />
       </label>    
+       <label>
+            Images: <input type="text" name="img" placeholder="sumbit image here"/>
+      </label>   
       <label>
-            Images: <input type="file" name="file" placeholder="sumbit image here"/>
+            Detail: <input type="text" name="details" placeholder=" deatils here"/>
       </label>    
     </fieldset>
     <input type="submit" value=" New Resturant" />
   </form>
+          <a href="/nights/"><button>Back to Bars</button></a>
+          <a href="/spots/"><button>Back to Resturants</button></a>
 </DefaultLayout>
         )
     }

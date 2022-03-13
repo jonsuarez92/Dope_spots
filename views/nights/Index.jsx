@@ -14,18 +14,15 @@ class Index extends React.Component{
                      <article class="entryWrapper">
                      <a href={`/nights/${night._id }`}>
                       <div class="card" style={{width:18+"rem"}}>
-  <img class="card-img-top" src={`${night.img}`}  alt="Card image cap"/>
-  <div class="card-body">
-    <h5 class="card-title">{night.name}</h5>
-    <p class="card-text"> {night.details}</p>
-    <a href="#" class="btn btn-primary">Check This Out</a>
-  </div> 
-</div>
-</a>
-                         
-                      
-                    
-                   </article>
+                    <img class="card-img-top" src={`${night.img}`}  alt="Card image cap"/>
+                    <div class="card-body">
+                        <h5 class="card-title">{night.name}</h5>
+                        <p class="card-text"> {night.details}</p>
+                        <a href="#" class="btn btn-primary">Check This Out</a>
+                    </div> 
+                    </div>
+                    </a>
+                    </article>
                      ))
                       }
                  </div>
