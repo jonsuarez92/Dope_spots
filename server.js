@@ -32,7 +32,7 @@ app.use(express.static("public"));
 app.use('/spots', spotController)
 app.use('/nights', nightController)
 app.get("/", (req, res) => {
-    res.send("your server is running");
+    res.render("Home");
   });
 
 //   app.get("/nights/seed", (req, res) => {

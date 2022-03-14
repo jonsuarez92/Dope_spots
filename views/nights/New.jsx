@@ -21,6 +21,7 @@ class New extends React.Component{
       <label>
             Detail: <input type="text" name="details" placeholder=" deatils here"/>
       </label>   
+      
     </fieldset>
     <input type="submit" value=" New Bar" />
   </form>

@@ -21,10 +21,9 @@ class DefaultLayout extends React.Component {
      </header>
      <nav>
     <ul class="nav nav-tabs">
-      <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">WORK</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+      <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="/nights">NIGHT SPOTS</a></li>
+      <li class="nav-item"><a class="nav-link" href="/spots">RESTAURANTS</a></li>
     </ul>
   </nav>
      <main>

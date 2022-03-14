@@ -27,10 +27,18 @@ class Edit extends React.Component{
                 </label>
                 <label>
                   Image:<input
-                    type="file"
-                    name="file"
+                    type="text"
+                    name="img"
                     placeholder="sumbit image"
-                    value={spot.image}
+                    value={night.image}
+                  />
+                </label>
+                <label>
+                  Details:<input
+                    type="text"
+                    name="details"
+                    placeholder="deatils here"
+                    value={night.image}
                   />
                 </label>
                 
