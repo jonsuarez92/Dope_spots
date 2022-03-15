@@ -1,11 +1,15 @@
   Dope spots
 
 Technologies Used: 
-javaScript
-html
-css
-bootstrap
+JavaScript
+Html
+Css
+Bootstrap
+React
+Express
+Mongoose DB
 
-https://github.com/jonsuarez92/Dope_spots/projects/1
+
+https://dopespots.herokuapp.com/nights
 
 https://github.com/jonsuarez92/Dope_spots/projects/1
