@@ -24,7 +24,7 @@ app.set('view engine', 'jsx')
 app.use(morgan("tiny")); // logging
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
-app.use(express.static("Public"));
+app.use(express.static("public"));
 
 ////////////////////////////////////////////
 // Routes
