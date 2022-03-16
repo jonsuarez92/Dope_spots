@@ -38,7 +38,7 @@ class Edit extends React.Component{
                     type="text"
                     name="details"
                     placeholder="deatils here"
-                    value={night.image}
+                    value={night.details}
                   />
                 </label>
                 

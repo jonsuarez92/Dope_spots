@@ -30,7 +30,7 @@ class Edit extends React.Component{
                     type="text"
                     name="img"
                     placeholder="sumbit image"
-                    value={night.image}
+                    value={spot.image}
                   />
                 </label>
                 <label>
@@ -38,7 +38,7 @@ class Edit extends React.Component{
                     type="text"
                     name="details"
                     placeholder="deatils here"
-                    value={night.image}
+                    value={spot.details}
                   />
                 </label>
                 
